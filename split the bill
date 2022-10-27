@@ -1,0 +1,34 @@
+##
+# Meal Bill Splitting Calculator
+#
+# @ Alisha M
+# @date 2022 /02/23 - Last Modified
+##
+
+# Get info about dinner
+billAmt = float(input("Enter the bill amount: $"))
+print()
+pplAmt = int(input("Enter the number of people who dined: "))
+print()
+tip = int(input("Enter the percentage you want to tip: "))
+print()
+taxes = int(input("Enter the percentage of tax: "))
+print()
+
+# Calculate the amount
+tax = billAmt * taxes / 100
+splitCost = billAmt / pplAmt 
+billTip = billAmt * tip / 100 
+tipTot = billTip / pplAmt 
+totTax = tax / pplAmt
+subtotal = splitCost + tipTot
+splitFinalTot = splitCost + tipTot + totTax
+
+# Show the user their new total
+print("Each of your subtotal's are: $" , subtotal)
+print()
+print("You will each tip: $" , tipTot)
+print()
+print("Tax per person is: $" , totTax)
+print()
+print("You each owe: $", splitFinalTot, end="")
